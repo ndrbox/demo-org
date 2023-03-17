@@ -1,0 +1,29 @@
+.tree-chart-node {
+  /* background: #eee; */
+  /* padding: 12px; */
+  /* border: 1px solid var(--vt-c-divider-dark-1); */
+  /* border-radius: 6px; */
+  height: 326px;
+}
+
+.el-card.tree-chart-node:hover {
+  box-shadow: var(--el-box-shadow-light);
+}
+
+.tree-context-button {
+  /* margin-top: auto; */
+  z-index: 999;
+  position:absolute;
+  right:10px;
+  top:10px;
+  /* bottom: 10px; */
+}
+
+.node-item {
+  /* margin-top: 8px; */
+  margin-bottom: 12px;
+}
+
+.node-item-title {
+  font-weight: 700;
+}
