@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>Structure 1</h2>
-    <el-drawer v-model="store.detail" class="detail-drawer">
+    <el-drawer size="300" v-model="store.detail" class="detail-drawer">
       <UserDetail :user="user"/>
       <el-button @click="onSaveNode">Save</el-button>
     </el-drawer>

@@ -1,22 +1,22 @@
 <template>
-  <div class="menu">
-    <el-menu
-      @open="handleOpen"
-      router
-      :default-active="activeIndex"
+  <el-menu
+    router
+    :default-active="activeIndex"
+    :collapse="isCollapse"
+    @open="handleOpen"
+    @close="handleClose"
+  >
+    <el-menu-item
+      class="menu-item"
+      v-for="menuItem in menuMap"
+      :key="menuItem.id"
+      :index="menuItem.path"
     >
-      <el-menu-item
-        class="menu-item"
-        v-for="menuItem in menuMap"
-        :key="menuItem.id"
-        :index="menuItem.path"
-      >
-        <template #title>
-          <span>{{ menuItem.title }}</span>
-        </template>
-      </el-menu-item>
-    </el-menu>
-  </div>
+      <template #title>
+        <span>{{ menuItem.title }}</span>
+      </template>
+    </el-menu-item>
+  </el-menu>
 </template>
 
 <script setup>
@@ -26,15 +26,16 @@ import { RouterLink, useRouter } from "vue-router";
 
 const menuMap = ref(menu);
 const router = useRouter();
-const activeIndex = ref('/')
+const activeIndex = ref("/");
+const isCollapse = ref(false);
 
-const handleOpen = (key,path) => {
+const handleOpen = (key, path) => {
   // router.push(path);
 };
 </script>
 
 <style scoped>
-  .menu-item{
-    font-size: 1rem;
-  }
+.menu-item {
+  font-size: 1rem;
+}
 </style>
